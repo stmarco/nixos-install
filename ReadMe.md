@@ -1,1 +1,1 @@
-## Ontdekkingsreis in NixOS
+# nixos-install
