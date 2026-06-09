@@ -11,13 +11,13 @@ parted /dev/vda -- set 3 esp on
 
 # Formatting
 # Assign a unique symbolic label to the file system
-mkfs.fat -F 32 -n boot /dev/vda1
+mkfs.fat -F 32 -n BOOT /dev/vda1
 mkswap -L swap /dev/vda2
 mkfs.ext4 -L nixos /dev/vda3
 
 mount /dev/disk/by-label/nixos /mnt
 mkdir -p /mnt/boot
-mount -o umask=077 /dev/disk/by-label/boot /mnt/boot
+mount -o umask=077 /dev/disk/by-label/BOOT /mnt/boot
 # turn swap on
 swapon /dev/vda2
 # Generate configuration file
