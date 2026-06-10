@@ -4,10 +4,10 @@
   # boot.loader.grub.efiSupport = true;
   # boot.loader.grub.efiInstallAsRemovable = true;
   # boot.loader.efi.efiSysMountPoint = "/boot/efi";
-    boot.loader.systemd-boot.enable
+    boot.loader.systemd-boot.enable = true;
   # Define on which hard drive you want to install Grub.
   #  boot.loader.grub.device = "/dev/sda";
- #   console.keyMap = "be-latin1";
+    console.keyMap = "be-latin1";
   # Configure network connections interactively with nmcli or nmtui.
     networking.networkmanager.enable = true;
   # Configure network proxy if necessary
