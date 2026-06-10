@@ -6,12 +6,13 @@
 
 let
   environmentConfig = import ./environment.nix { inherit pkgs; };
+  nvidiaConfig = import ./nvidia.nix { inherit pkgs; inherit config; };
   servicesConfig = import ./services.nix { inherit pkgs; };
   settingsConfig = import ./settings.nix;
   usersConfig = import ./users.nix { inherit pkgs; };
 
   # Combineer alle configuraties met //
-  combinedConfig = environmentConfig // servicesConfig // settingsConfig // usersConfig;
+  combinedConfig = environmentConfig // nvidiaConfig // servicesConfig // settingsConfig // usersConfig;
 in
 {
   imports =
