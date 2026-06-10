@@ -4,6 +4,7 @@
   # boot.loader.grub.efiSupport = true;
   # boot.loader.grub.efiInstallAsRemovable = true;
   # boot.loader.efi.efiSysMountPoint = "/boot/efi";
+    boot.loader.systemd-boot.enable
   # Define on which hard drive you want to install Grub.
   #  boot.loader.grub.device = "/dev/sda";
     console.keyMap = "be-latin1";
