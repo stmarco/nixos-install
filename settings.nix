@@ -1,11 +1,11 @@
 {
   # Use the GRUB 2 boot loader.
-    boot.loader.grub.enable = true;
+  #  boot.loader.grub.enable = true;
   # boot.loader.grub.efiSupport = true;
   # boot.loader.grub.efiInstallAsRemovable = true;
   # boot.loader.efi.efiSysMountPoint = "/boot/efi";
   # Define on which hard drive you want to install Grub.
-    boot.loader.grub.device = "/dev/sda";
+  #  boot.loader.grub.device = "/dev/sda";
     console.keyMap = "be-latin1";
   # Configure network connections interactively with nmcli or nmtui.
     networking.networkmanager.enable = true;

@@ -7,7 +7,7 @@ parted /dev/vda -- mkpart ESP fat32 1MB 1G
 parted /dev/vda -- mkpart swap linux-swap 1G 9G
 # Add root partition
 parted /dev/vda -- mkpart root ext4 9G 100%
-parted /dev/vda -- set 3 esp on
+parted /dev/vda -- set 1 esp on
 
 # Formatting
 # Assign a unique symbolic label to the file system
