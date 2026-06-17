@@ -2,16 +2,24 @@
 { config, pkgs, ... }:
 
 {
-  # 1. Sta niet-vrije software toe (nodig voor de officiële drivers)
-  nixpkgs.config.allowUnfree = true;
+# 1. Sta onvrije software toe
+nixpkgs.config.allowUnfree = true;
 
-  # 2. Zorg dat het grafische systeem de NVIDIA driver laadt
-  services.xserver.videoDrivers = [ "nvidia" ];
+# 2. Activeer de NVIDIA driver op de officiële manier
+services.xserver.videoDrivers = [ "nvidia" ];
 
+# Zorg dat er GEEN grafische interface start (puur headless server)
+services.xserver.enable = false; 
+services.desktopManager.plasma6.enable = false; # Of gnome, xfce etc. indien van toepassing
+
+hardware.graphics = {
+  enable = true;
+  enable32Bit = true;
+};
   hardware.nvidia = {
     # Schakel modesetting in (is vaak verplicht voor moderne desktopomgevingen)
     modesetting.enable = true;
-
+    
     # Schakel de NVIDIA instellingen-app in (optioneel)
     nvidiaSettings = true;
 

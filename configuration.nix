@@ -5,7 +5,7 @@
 { config, lib, pkgs, ... }:
 
 let
-  environmentConfig = import ./environment.nix { inherit pkgs; };
+  environmentConfig = import ./environment.nix { inherit pkgs; inherit config; };
   nvidiaConfig = import ./nvidia.nix { inherit pkgs; inherit config; };
   servicesConfig = import ./services.nix { inherit pkgs; };
   settingsConfig = import ./settings.nix;
@@ -20,7 +20,8 @@ in
       ./hardware-configuration.nix
     ];
 
-
+  # Dwing de kernel om de NVIDIA drivers te laden bij het opstarten (nodig voor headless compute)
+  boot.kernelModules = [ "nvidia" "nvidia_uvm" "nvidia_modeset" "nvidia_drm" ];
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
    console = {
