@@ -24,3 +24,11 @@ chmod a+x *.sh
 nixos-generate-config --root /mnt
 
 cp configurationPostGenerate.nix /mnt/etc/nixos/configuration.nix
+
+nixos-enter --root /mnt -c 'passwd marco'
+
+# upgrade van 25.11 naar 26.5
+
+sudo nix-channel --add https://nixos.org/channels/nixos-26.05 nixos
+sudo nix-channel --update
+sudo nixos-rebuild switch --upgrade
