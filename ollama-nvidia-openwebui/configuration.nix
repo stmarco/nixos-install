@@ -49,7 +49,7 @@
   # =========================================================================
   services.ollama = {
     enable = true;
- # niet meer geldig in 26.5:   acceleration = "cuda"; # Dwing Ollama om de GPU te gebruiken
+ # volgende is niet meer geldig in 26.5:   acceleration = "cuda"; # Dwing Ollama om de GPU te gebruiken
 	package = pkgs.ollama-cuda;
   };
 
